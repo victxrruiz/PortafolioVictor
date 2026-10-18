@@ -671,7 +671,13 @@ body.light hr.separator {
   top: 40px;
   box-shadow: 0 0 7px rgba(0,0,0,.9);
   object-fit: cover;
+  object-position: center top;
   padding: 0;
+}
+
+.main-img-mobile {
+  object-fit: cover;
+  object-position: center top;
 }
 
 .home .container-home {
