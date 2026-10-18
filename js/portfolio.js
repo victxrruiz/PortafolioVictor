@@ -4,8 +4,7 @@
   var gallery = document.getElementById('grid-gallery');
   if (!gallery) return;
 
-  var placeholder = 'img/projects/placeholder.svg';
-  // Sustituye los archivos provisionales de cada categoría por tus proyectos.
+  // Agrega las rutas de tus proyectos a las imágenes de cada categoría.
   var categories = [
     {
       id: 'social-media', title: 'Social Media', icon: 'fa-comments',
@@ -22,32 +21,31 @@
         'img/portfolio/social-media/07-thumb.jpg', 'img/portfolio/social-media/08-thumb.jpg'
       ]
     },
-    { id: 'editorial', title: 'Editorial', icon: 'fa-book', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
-    { id: 'branding', title: 'Marca / Branding', icon: 'fa-pencil', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
+    { id: 'editorial', title: 'Editorial', icon: 'fa-book', images: [] },
+    { id: 'branding', title: 'Marca / Branding', icon: 'fa-pencil', images: [] },
     {
       id: 'escenografia', title: 'Escenografía / Stands', icon: 'fa-cubes',
       images: [
         'img/portfolio/escenografia/01.jpg', 'img/portfolio/escenografia/02.png',
-        'img/portfolio/escenografia/03.png', placeholder, placeholder, placeholder
+        'img/portfolio/escenografia/03.png'
       ],
       thumbnails: [
         'img/portfolio/escenografia/01-thumb.jpg', 'img/portfolio/escenografia/02-thumb.png',
-        'img/portfolio/escenografia/03-thumb.png', placeholder, placeholder, placeholder
+        'img/portfolio/escenografia/03-thumb.png'
       ]
     },
-    { id: 'espacios', title: 'Intervención de espacios', icon: 'fa-building-o', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
-    { id: 'fotografia', title: 'Fotografía', icon: 'fa-camera', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] }
+    { id: 'espacios', title: 'Intervención de espacios', icon: 'fa-building-o', images: [] },
+    { id: 'fotografia', title: 'Fotografía', icon: 'fa-camera', images: [] }
   ];
 
   function imageSummary(images) {
-    var provisionalCount = images.filter(function (source) { return source === placeholder; }).length;
-    return images.length + ' imágenes' + (provisionalCount ? ' · ' + provisionalCount + ' provisionales' : '');
+    return images.length + ' imágenes';
   }
   var allImages = categories.reduce(function (images, category) { return images.concat(category.images); }, []);
   var allSummary = categories.length + ' categorías · ' + imageSummary(allImages);
 
   function imageDescription(category, index) {
-    return category.title + ' — Imagen ' + (index + 1) + (category.images[index] === placeholder ? ' (provisional)' : '');
+    return category.title + ' — Imagen ' + (index + 1);
   }
 
   function element(tag, className, text) {
@@ -149,6 +147,12 @@
     heading.append(icon, document.createTextNode(category.title));
     headingRow.append(heading, element('span', 'portfolio-category-count open-sans-font', ('0' + category.images.length).slice(-2) + ' imágenes'));
     var grid = element('div', 'portfolio-photo-grid');
+    if (!category.images.length) {
+      section.append(headingRow, element('p', 'portfolio-intro open-sans-font', 'Aún no hay proyectos publicados en esta sección.'));
+      content.appendChild(section);
+      sections.push({ id: category.id, node: section });
+      return;
+    }
     category.images.forEach(function (source, index) {
       var card = element('button', 'portfolio-photo');
       card.type = 'button';
