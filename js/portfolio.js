@@ -48,7 +48,6 @@
         'img/portfolio/escenografia/03-thumb.png'
       ]
     },
-    { id: 'espacios', title: 'Intervención de espacios', icon: 'fa-building-o', images: [] },
     { id: 'fotografia', title: 'Fotografía', icon: 'fa-camera', images: [] }
   ];
 
