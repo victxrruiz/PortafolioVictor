@@ -24,16 +24,16 @@
     {
       id: 'editorial', title: 'Editorial', icon: 'fa-book',
       images: [
-        'img/portfolio/editorial/01.jpg', 'img/portfolio/editorial/02.jpg',
-        'img/portfolio/editorial/03.jpg', 'img/portfolio/editorial/04.jpg',
-        'img/portfolio/editorial/05.jpg', 'img/portfolio/editorial/06.jpg',
-        'img/portfolio/editorial/07.jpg', 'img/portfolio/editorial/08.jpg'
+        'img/portfolio/editorial/01.jpg?v=2', 'img/portfolio/editorial/02.jpg?v=2',
+        'img/portfolio/editorial/03.jpg?v=2', 'img/portfolio/editorial/04.jpg?v=2',
+        'img/portfolio/editorial/05.jpg?v=2', 'img/portfolio/editorial/06.jpg?v=2',
+        'img/portfolio/editorial/07.jpg?v=2', 'img/portfolio/editorial/08.jpg?v=2'
       ],
       thumbnails: [
-        'img/portfolio/editorial/01-thumb.jpg', 'img/portfolio/editorial/02-thumb.jpg',
-        'img/portfolio/editorial/03-thumb.jpg', 'img/portfolio/editorial/04-thumb.jpg',
-        'img/portfolio/editorial/05-thumb.jpg', 'img/portfolio/editorial/06-thumb.jpg',
-        'img/portfolio/editorial/07-thumb.jpg', 'img/portfolio/editorial/08-thumb.jpg'
+        'img/portfolio/editorial/01-thumb.jpg?v=2', 'img/portfolio/editorial/02-thumb.jpg?v=2',
+        'img/portfolio/editorial/03-thumb.jpg?v=2', 'img/portfolio/editorial/04-thumb.jpg?v=2',
+        'img/portfolio/editorial/05-thumb.jpg?v=2', 'img/portfolio/editorial/06-thumb.jpg?v=2',
+        'img/portfolio/editorial/07-thumb.jpg?v=2', 'img/portfolio/editorial/08-thumb.jpg?v=2'
       ]
     },
     { id: 'branding', title: 'Marca / Branding', icon: 'fa-pencil', images: [] },
