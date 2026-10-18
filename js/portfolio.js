@@ -24,7 +24,17 @@
     },
     { id: 'editorial', title: 'Editorial', icon: 'fa-book', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
     { id: 'branding', title: 'Marca / Branding', icon: 'fa-pencil', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
-    { id: 'escenografia', title: 'Escenografía / Stands', icon: 'fa-cubes', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
+    {
+      id: 'escenografia', title: 'Escenografía / Stands', icon: 'fa-cubes',
+      images: [
+        'img/portfolio/escenografia/01.jpg', 'img/portfolio/escenografia/02.png',
+        'img/portfolio/escenografia/03.png', placeholder, placeholder, placeholder
+      ],
+      thumbnails: [
+        'img/portfolio/escenografia/01-thumb.jpg', 'img/portfolio/escenografia/02-thumb.png',
+        'img/portfolio/escenografia/03-thumb.png', placeholder, placeholder, placeholder
+      ]
+    },
     { id: 'espacios', title: 'Intervención de espacios', icon: 'fa-building-o', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
     { id: 'fotografia', title: 'Fotografía', icon: 'fa-camera', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] }
   ];
