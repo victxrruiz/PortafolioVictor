@@ -21,7 +21,21 @@
         'img/portfolio/social-media/07-thumb.jpg', 'img/portfolio/social-media/08-thumb.jpg'
       ]
     },
-    { id: 'editorial', title: 'Editorial', icon: 'fa-book', images: [] },
+    {
+      id: 'editorial', title: 'Editorial', icon: 'fa-book',
+      images: [
+        'img/portfolio/editorial/01.jpg', 'img/portfolio/editorial/02.jpg',
+        'img/portfolio/editorial/03.jpg', 'img/portfolio/editorial/04.jpg',
+        'img/portfolio/editorial/05.jpg', 'img/portfolio/editorial/06.jpg',
+        'img/portfolio/editorial/07.jpg', 'img/portfolio/editorial/08.jpg'
+      ],
+      thumbnails: [
+        'img/portfolio/editorial/01-thumb.jpg', 'img/portfolio/editorial/02-thumb.jpg',
+        'img/portfolio/editorial/03-thumb.jpg', 'img/portfolio/editorial/04-thumb.jpg',
+        'img/portfolio/editorial/05-thumb.jpg', 'img/portfolio/editorial/06-thumb.jpg',
+        'img/portfolio/editorial/07-thumb.jpg', 'img/portfolio/editorial/08-thumb.jpg'
+      ]
+    },
     { id: 'branding', title: 'Marca / Branding', icon: 'fa-pencil', images: [] },
     {
       id: 'escenografia', title: 'Escenografía / Stands', icon: 'fa-cubes',
