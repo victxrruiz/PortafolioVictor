@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <title>Victor Ruiz | Estratega Visual &amp; Diseñador</title>
@@ -12,8 +12,10 @@
     <meta property="og:url" content="https://victxrruiz.github.io/PortafolioVictor/light.html">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Template Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700&amp;display=swap" rel="stylesheet">
     <!-- Template CSS Files -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/component.css" rel="stylesheet">
@@ -27,11 +29,6 @@
     <script src="js/modernizr.min.js"></script>
   </head>
   <body class="light home-page">
-    <!-- PRELOADER STARTS -->
-    <div id="preloader">
-      <div class="line"></div>
-    </div>
-    <!-- PRELOADER ENDS -->
     <!-- Header Starts -->
     <header class="header" id="navbar-collapse-toggle">
       <!-- Fixed Navigation Starts -->
@@ -422,7 +419,10 @@
           </div>
           <!-- Page Title Ends -->
           <div class="main-content text-center">
-            <div id="grid-gallery" class="container grid-gallery">
+            <div id="grid-gallery" class="container portfolio-collection"></div>
+            <!-- Keep unused template examples inert: no external images or video requests. -->
+            <template id="portfolio-template-examples">
+            <div class="container grid-gallery">
               <!-- Portfolio Grid Starts -->
               <div class="grid-wrap">
                 <ul class="row grid gridlist">
@@ -866,6 +866,7 @@
                 <!-- Portfolio Navigation Ends -->
               </div>
             </div>
+            </template>
           </div>
         </div>
         <!-- Main Content Ends -->
@@ -973,7 +974,7 @@
                   <article class="post-container">
                     <div class="post-thumb">
                       <a href="blog-post-light.html" class="d-block position-relative overflow-hidden">
-                        <img src="http://via.placeholder.com/895x552.jpg" class="img-fluid" alt="Blog Post">
+                        <img src="img/blog/blog-post-1.jpg" class="img-fluid" alt="Blog" loading="lazy" decoding="async">
                       </a>
                     </div>
                     <div class="post-content">
@@ -994,7 +995,7 @@
                   <article class="post-container">
                     <div class="post-thumb">
                       <a href="blog-post-light.html" class="d-block position-relative overflow-hidden">
-                        <img src="http://via.placeholder.com/895x552.jpg" class="img-fluid" alt="">
+                        <img src="img/blog/blog-post-2.jpg" class="img-fluid" alt="" loading="lazy" decoding="async">
                       </a>
                     </div>
                     <div class="post-content">
@@ -1015,7 +1016,7 @@
                   <article class="post-container">
                     <div class="post-thumb">
                       <a href="blog-post-light.html" class="d-block position-relative overflow-hidden">
-                        <img src="http://via.placeholder.com/895x552.jpg" class="img-fluid" alt="">
+                        <img src="img/blog/blog-post-3.jpg" class="img-fluid" alt="" loading="lazy" decoding="async">
                       </a>
                     </div>
                     <div class="post-content">
@@ -1036,7 +1037,7 @@
                   <article class="post-container">
                     <div class="post-thumb">
                       <a href="blog-post-light.html" class="d-block position-relative overflow-hidden">
-                        <img src="http://via.placeholder.com/895x552.jpg" class="img-fluid" alt="">
+                        <img src="img/blog/blog-post-4.jpg" class="img-fluid" alt="" loading="lazy" decoding="async">
                       </a>
                     </div>
                     <div class="post-content">
@@ -1057,7 +1058,7 @@
                   <article class="post-container">
                     <div class="post-thumb">
                       <a href="blog-post-light.html" class="d-block position-relative overflow-hidden">
-                        <img src="http://via.placeholder.com/895x552.jpg" class="img-fluid" alt="">
+                        <img src="img/blog/blog-post-5.jpg" class="img-fluid" alt="" loading="lazy" decoding="async">
                       </a>
                     </div>
                     <div class="post-content">
@@ -1078,7 +1079,7 @@
                   <article class="post-container">
                     <div class="post-thumb">
                       <a href="blog-post-light.html" class="d-block position-relative overflow-hidden">
-                        <img src="http://via.placeholder.com/895x552.jpg" class="img-fluid" alt="">
+                        <img src="img/blog/blog-post-6.jpg" class="img-fluid" alt="" loading="lazy" decoding="async">
                       </a>
                     </div>
                     <div class="post-content">
@@ -1134,7 +1135,7 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/popper.min.js"></script>
     <script src="js/menu.js?v=portfolio-button-1"></script>
-    <script src="js/portfolio.js?v=6"></script>
-    <script src="js/custom.js?v=portfolio-sections-1"></script>
+    <script src="js/portfolio.js?v=7"></script>
+    <script src="js/custom.js?v=loading-2"></script>
   </body>
 </html>

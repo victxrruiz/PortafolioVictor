@@ -69,7 +69,7 @@
     return node;
   }
 
-  // Enhance the template's fallback gallery before the legacy gallery initializes.
+  // Render only published projects; unused template examples remain inert.
   gallery.replaceChildren();
   gallery.className = 'container portfolio-collection';
   var introduction = element('p', 'portfolio-intro open-sans-font', 'Explora mis áreas de trabajo. Selecciona una categoría para ver sus proyectos.');
@@ -175,7 +175,8 @@
       var image = element('img');
       image.src = category.thumbnails ? category.thumbnails[index] : source;
       image.alt = imageDescription(category, index);
-      image.loading = categoryIndex === 0 ? 'eager' : 'lazy';
+      image.loading = 'lazy';
+      image.decoding = 'async';
       image.width = 900;
       image.height = 650;
       var caption = element('span', 'portfolio-photo-caption');
