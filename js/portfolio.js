@@ -5,15 +5,40 @@
   if (!gallery) return;
 
   var placeholder = 'img/projects/placeholder.svg';
-  // Sustituye los seis archivos de cada categoría por las imágenes de tus proyectos.
+  // Sustituye los archivos provisionales de cada categoría por tus proyectos.
   var categories = [
-    { id: 'social-media', title: 'Social Media', icon: 'fa-comments', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
+    {
+      id: 'social-media', title: 'Social Media', icon: 'fa-comments',
+      images: [
+        'img/portfolio/social-media/01.jpg', 'img/portfolio/social-media/02.jpg',
+        'img/portfolio/social-media/03.jpg', 'img/portfolio/social-media/04.jpg',
+        'img/portfolio/social-media/05.jpg', 'img/portfolio/social-media/06.jpg',
+        'img/portfolio/social-media/07.jpg', 'img/portfolio/social-media/08.jpg'
+      ],
+      thumbnails: [
+        'img/portfolio/social-media/01-thumb.jpg', 'img/portfolio/social-media/02-thumb.jpg',
+        'img/portfolio/social-media/03-thumb.jpg', 'img/portfolio/social-media/04-thumb.jpg',
+        'img/portfolio/social-media/05-thumb.jpg', 'img/portfolio/social-media/06-thumb.jpg',
+        'img/portfolio/social-media/07-thumb.jpg', 'img/portfolio/social-media/08-thumb.jpg'
+      ]
+    },
     { id: 'editorial', title: 'Editorial', icon: 'fa-book', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
     { id: 'branding', title: 'Marca / Branding', icon: 'fa-pencil', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
     { id: 'escenografia', title: 'Escenografía / Stands', icon: 'fa-cubes', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
     { id: 'espacios', title: 'Intervención de espacios', icon: 'fa-building-o', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] },
     { id: 'fotografia', title: 'Fotografía', icon: 'fa-camera', images: [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder] }
   ];
+
+  function imageSummary(images) {
+    var provisionalCount = images.filter(function (source) { return source === placeholder; }).length;
+    return images.length + ' imágenes' + (provisionalCount ? ' · ' + provisionalCount + ' provisionales' : '');
+  }
+  var allImages = categories.reduce(function (images, category) { return images.concat(category.images); }, []);
+  var allSummary = categories.length + ' categorías · ' + imageSummary(allImages);
+
+  function imageDescription(category, index) {
+    return category.title + ' — Imagen ' + (index + 1) + (category.images[index] === placeholder ? ' (provisional)' : '');
+  }
 
   function element(tag, className, text) {
     var node = document.createElement(tag);
@@ -29,7 +54,7 @@
   var filters = element('div', 'portfolio-filters');
   filters.setAttribute('role', 'group');
   filters.setAttribute('aria-label', 'Filtrar proyectos por categoría');
-  var status = element('p', 'portfolio-status open-sans-font', '6 categorías · 36 imágenes provisionales');
+  var status = element('p', 'portfolio-status open-sans-font', allSummary);
   status.setAttribute('role', 'status');
   var content = element('div', 'portfolio-sections');
   content.id = 'portfolio-sections';
@@ -49,7 +74,8 @@
       sections.forEach(function (section) {
         section.node.hidden = id !== 'all' && section.id !== id;
       });
-      status.textContent = id === 'all' ? '6 categorías · 36 imágenes provisionales' : label + ' · 6 imágenes provisionales';
+      var selectedCategory = categories.find(function (category) { return category.id === id; });
+      status.textContent = id === 'all' ? allSummary : label + ' · ' + imageSummary(selectedCategory.images);
     });
     filters.appendChild(button);
     filterButtons.push({ id: id, button: button });
@@ -78,7 +104,7 @@
   function updateViewer() {
     viewerTitle.textContent = activeCategory.title;
     viewerImage.src = activeCategory.images[activeIndex];
-    viewerImage.alt = activeCategory.title + ' — Imagen ' + (activeIndex + 1) + ' (provisional)';
+    viewerImage.alt = imageDescription(activeCategory, activeIndex);
     counter.textContent = (activeIndex + 1) + ' / ' + activeCategory.images.length;
   }
   function moveImage(direction) {
@@ -111,16 +137,16 @@
     var icon = element('i', 'fa ' + category.icon);
     icon.setAttribute('aria-hidden', 'true');
     heading.append(icon, document.createTextNode(category.title));
-    headingRow.append(heading, element('span', 'portfolio-category-count open-sans-font', '06 imágenes'));
+    headingRow.append(heading, element('span', 'portfolio-category-count open-sans-font', ('0' + category.images.length).slice(-2) + ' imágenes'));
     var grid = element('div', 'portfolio-photo-grid');
     category.images.forEach(function (source, index) {
       var card = element('button', 'portfolio-photo');
       card.type = 'button';
-      card.setAttribute('aria-label', 'Ampliar ' + category.title + ', imagen ' + (index + 1) + ' (provisional)');
+      card.setAttribute('aria-label', 'Ampliar ' + imageDescription(category, index));
       card.setAttribute('aria-haspopup', 'dialog');
       var image = element('img');
-      image.src = source;
-      image.alt = category.title + ' — Imagen provisional ' + (index + 1);
+      image.src = category.thumbnails ? category.thumbnails[index] : source;
+      image.alt = imageDescription(category, index);
       image.loading = categoryIndex === 0 ? 'eager' : 'lazy';
       image.width = 900;
       image.height = 650;
