@@ -1913,6 +1913,13 @@ body.blog-post article img {
   }
 }
 
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
 /* Keep mobile navigation recognizable without relying on the icon alone. */
 @media (max-width: 991px) {
   #inputmobile .trigger-mobile,

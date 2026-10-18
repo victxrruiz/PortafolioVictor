@@ -115,6 +115,21 @@ var link_about = document.getElementById('link-about');
 
    var indexPage = 0;
 
+   var link_portfolio = document.getElementById('link-portfolio');
+   if (link_portfolio) {
+      link_portfolio.addEventListener('click', function (event) {
+         event.preventDefault();
+         indexPage = 2;
+         reveal('top');
+         document.body.classList.remove('home-page');
+         [desktop_nav, mobile_nav].forEach(function (nav) {
+            Array.from(nav.children).forEach(function (item, index) {
+               item.classList.toggle('active', index === 2);
+            });
+         });
+      });
+   }
+
    desktop_nav.addEventListener('click', function (e) {
       var li = e.target.closest('li');
       var nodes = Array.from(li.closest('ul').children);
