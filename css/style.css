@@ -1919,7 +1919,7 @@ body.blog-post article img {
   .home-page #inputmobile .trigger-mobile {
     width: 124px;
     height: 54px;
-    padding: 18px 0 0 83px;
+    padding: 0;
     border: 2px solid #ffb400;
     border-radius: 28px;
     color: #ffb400;
@@ -1940,6 +1940,32 @@ body.blog-post article img {
   #inputmobile .trigger-mobile.show-menu:before {
     content: 'CERRAR';
     font-size: 12px;
+  }
+
+  #inputmobile .trigger-mobile > span {
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 1px);
+    margin: 0;
+    transform-origin: center;
+  }
+
+  #inputmobile .trigger-mobile > span:first-child {
+    top: calc(50% - 8px);
+  }
+
+  #inputmobile .trigger-mobile > span:last-child {
+    top: calc(50% + 6px);
+  }
+
+  #inputmobile .trigger-mobile.show-menu > span:first-child,
+  #inputmobile .trigger-mobile.show-menu > span:last-child {
+    top: calc(50% - 1px);
+    transform: rotate(45deg);
+  }
+
+  #inputmobile .trigger-mobile.show-menu > span:last-child {
+    transform: rotate(-45deg);
   }
 
   #inputmobile .trigger-mobile:focus-visible {
