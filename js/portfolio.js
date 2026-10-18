@@ -52,6 +52,15 @@
     { id: 'fotografia', title: 'Fotografía', icon: 'fa-camera', images: [] }
   ];
 
+  categories.forEach(function (category) {
+    var projectData = (window.portfolioData || {})[category.id];
+    if (projectData) {
+      category.images = projectData.images;
+      category.thumbnails = projectData.thumbnails;
+      category.titles = projectData.titles;
+    }
+  });
+
   function imageSummary(images) {
     return images.length + ' imágenes';
   }
@@ -59,7 +68,7 @@
   var allSummary = categories.length + ' categorías · ' + imageSummary(allImages);
 
   function imageDescription(category, index) {
-    return category.title + ' — Imagen ' + (index + 1);
+    return category.titles && category.titles[index] ? category.titles[index] : category.title + ' — Imagen ' + (index + 1);
   }
 
   function element(tag, className, text) {
@@ -124,7 +133,7 @@
   var activeIndex = 0;
 
   function updateViewer() {
-    viewerTitle.textContent = activeCategory.title;
+    viewerTitle.textContent = imageDescription(activeCategory, activeIndex);
     viewerImage.src = activeCategory.images[activeIndex];
     viewerImage.alt = imageDescription(activeCategory, activeIndex);
     counter.textContent = (activeIndex + 1) + ' / ' + activeCategory.images.length;
@@ -180,7 +189,7 @@
       image.width = 900;
       image.height = 650;
       var caption = element('span', 'portfolio-photo-caption');
-      caption.append(element('span', 'open-sans-font', category.title), element('span', 'portfolio-photo-number', ('0' + (index + 1)).slice(-2)));
+      caption.appendChild(element('span', 'open-sans-font', imageDescription(category, index)));
       card.append(image, caption);
       card.addEventListener('click', function () {
         activeCategory = category;
