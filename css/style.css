@@ -1913,3 +1913,38 @@ body.blog-post article img {
   }
 }
 
+/* Keep mobile navigation recognizable without relying on the icon alone. */
+@media (max-width: 991px) {
+  #inputmobile .trigger-mobile,
+  .home-page #inputmobile .trigger-mobile {
+    width: 124px;
+    height: 54px;
+    padding: 18px 0 0 83px;
+    border: 2px solid #ffb400;
+    border-radius: 28px;
+    color: #ffb400;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
+  }
+
+  #inputmobile .trigger-mobile:before {
+    content: 'MENÚ';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font: 700 14px/1 'Poppins', sans-serif;
+    letter-spacing: .5px;
+  }
+
+  #inputmobile .trigger-mobile.show-menu:before {
+    content: 'CERRAR';
+    font-size: 12px;
+  }
+
+  #inputmobile .trigger-mobile:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 4px;
+  }
+}
+
