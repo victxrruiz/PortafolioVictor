@@ -634,6 +634,8 @@ body.light hr.separator {
     text-transform: uppercase;
     padding: 0 25px 0 30px;
     height: 50px;
+    width: max-content;
+    white-space: nowrap;
   }
 
   .header .icon-box div:hover h2 {
