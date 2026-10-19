@@ -1,0 +1,19 @@
+/* Content stays visible without JavaScript or when reduced motion is requested. */
+.scroll-detail {
+  transition: opacity .6s ease, transform .6s cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--scroll-delay, 0ms);
+}
+
+.scroll-detail.is-scroll-pending {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-detail,
+  .scroll-detail.is-scroll-pending {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
