@@ -1,0 +1,13 @@
+/* Keep the original loader, with a CSS fallback so it cannot cover the site indefinitely. */
+#preloader {
+  animation: original-loader-dismiss 2.2s step-end forwards;
+}
+
+@keyframes original-loader-dismiss {
+  from { visibility: visible; }
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader { display: none; }
+}

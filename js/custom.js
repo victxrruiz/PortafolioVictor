@@ -19,6 +19,11 @@
 
 	$(document).ready(function() {
 
+		// Original entrance, without waiting for external images or the window load event.
+		setTimeout(function() {
+			$('#preloader').addClass('preloaded');
+		}, 800);
+
 		/* ----------------------------------------------------------- */
 		/*  STOP VIDEOS
         /* ----------------------------------------------------------- */
