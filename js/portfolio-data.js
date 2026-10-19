@@ -97,5 +97,52 @@ window.portfolioData = {
       "ESCENARIO MOZCALTI",
       "STAND UVP EXPO AKAI"
     ]
+  },
+  "fotografia": {
+    "images": [
+      "img/portfolio/fotografia/01.jpg?v=483765a3ca",
+      "img/portfolio/fotografia/03.jpg?v=1681774788",
+      "img/portfolio/fotografia/04.jpg?v=694fed954c",
+      "img/portfolio/fotografia/15.jpg?v=2d973f86bc",
+      "img/portfolio/fotografia/19.jpg?v=59270475b2",
+      "img/portfolio/fotografia/29.jpg?v=022a9897a3",
+      "img/portfolio/fotografia/30.jpg?v=c6ac08d864",
+      "img/portfolio/fotografia/40.jpg?v=bdd250a081",
+      "img/portfolio/fotografia/43.jpg?v=094e80a040",
+      "img/portfolio/fotografia/58.jpg?v=d56e9dcb97",
+      "img/portfolio/fotografia/62.jpg?v=f10fb88e0b",
+      "img/portfolio/fotografia/66.jpg?v=e6c23cda1a",
+      "img/portfolio/fotografia/2407.jpg?v=42ac7bbe7a"
+    ],
+    "thumbnails": [
+      "img/portfolio/fotografia/01-thumb.jpg?v=b255323623",
+      "img/portfolio/fotografia/03-thumb.jpg?v=806f0ab84b",
+      "img/portfolio/fotografia/04-thumb.jpg?v=6ebfc28968",
+      "img/portfolio/fotografia/15-thumb.jpg?v=4d1cbd1645",
+      "img/portfolio/fotografia/19-thumb.jpg?v=7c4e6c7612",
+      "img/portfolio/fotografia/29-thumb.jpg?v=e6076c5428",
+      "img/portfolio/fotografia/30-thumb.jpg?v=19402c4237",
+      "img/portfolio/fotografia/40-thumb.jpg?v=006fc03f4d",
+      "img/portfolio/fotografia/43-thumb.jpg?v=4e26b675c0",
+      "img/portfolio/fotografia/58-thumb.jpg?v=9488d5d445",
+      "img/portfolio/fotografia/62-thumb.jpg?v=ba687e73ef",
+      "img/portfolio/fotografia/66-thumb.jpg?v=b6d1377c8e",
+      "img/portfolio/fotografia/2407-thumb.jpg?v=c7fe697607"
+    ],
+    "titles": [
+      "ARQUITECTURA5",
+      "IMG_2955-Mejorado-NR",
+      "MITOKALI_TEQUILA",
+      "INTERUVP_FURBO",
+      "MITOKALI_TEQUILA",
+      "INTERUVP_FURBO",
+      "INTERUVP_FURBO",
+      "POSADA_TLX2025",
+      "POSADA_TLX2025",
+      "POSADA_TLX2025",
+      "POSADA_TLX2025",
+      "POSADA_TLX2025",
+      "IMG"
+    ]
   }
 };

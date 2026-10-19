@@ -15,6 +15,7 @@ CATEGORIES = {
     "editorial": "EDITORIAL",
     "branding": "MARCA",
     "escenografia": "ESCENOGRAFÍA Y STANDS",
+    "fotografia": "FOTOGRAFÍA",
 }
 
 
