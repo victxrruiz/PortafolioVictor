@@ -1,0 +1,29 @@
+/* Figma-inspired arrow; native cursors remain on touch screens and text fields. */
+@media (hover: hover) and (pointer: fine) {
+  body,
+  .c100:hover span {
+    cursor: url('../img/cursor-figma.svg') 4 3, default;
+  }
+
+  a,
+  button,
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [role="button"],
+  .button,
+  .icon-box,
+  .header ul.icon-menu li.icon-box,
+  .mobile-nav-element,
+  .portfolio-photo,
+  .portfolio-filter,
+  .portfolio-viewer button,
+  #inputmobile .trigger-mobile {
+    cursor: url('../img/cursor-figma.svg') 4 3, pointer;
+  }
+
+  input,
+  textarea,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+}
