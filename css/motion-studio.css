@@ -79,12 +79,12 @@
 .motion-panel {
   position: absolute;
   inset: -20% -45%;
-  background: var(--accent-color, #D7FF38);
+  background: #25281e;
   transform: translateX(-125%) skewX(-8deg);
   will-change: transform;
 }
 
-.motion-panel:nth-child(2) { background: #35392b; }
+.motion-panel:nth-child(2) { background: #1e201b; }
 .motion-panel:nth-child(3) { background: #171717; }
 
 .motion-panel:last-child::after {
@@ -98,6 +98,7 @@
   border: 1px solid var(--accent-color, #D7FF38);
   transform: skewX(8deg) rotate(45deg);
   box-shadow: 7px 7px 0 -2px #171717, 7px 7px 0 -1px var(--accent-color, #D7FF38);
+  opacity: .55;
 }
 
 @keyframes studio-turn {

@@ -42,9 +42,9 @@
         { transform: opening ? 'translateX(0) skewX(-8deg)' : 'translateX(-125%) skewX(-8deg)' },
         { transform: opening ? 'translateX(125%) skewX(-8deg)' : 'translateX(0) skewX(-8deg)' }
       ], {
-        duration: opening ? 360 : 320,
+        duration: opening ? 450 : 420,
         delay: (opening ? panels.length - 1 - index : index) * 45,
-        easing: 'cubic-bezier(.76, 0, .24, 1)',
+        easing: 'cubic-bezier(.45, 0, .25, 1)',
         fill: 'both'
       });
     });
