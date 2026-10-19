@@ -1,6 +1,14 @@
+#about {
+  --about-section-gap: 56px;
+}
+
+#about > .title-section {
+  padding-bottom: var(--about-section-gap);
+}
+
 .about-intro {
   max-width: 860px;
-  margin: 0 auto 56px;
+  margin: 0 auto var(--about-section-gap);
   padding-left: 24px;
   border-left: 3px solid var(--accent-color, #D7FF38);
   font-size: 16px;
@@ -15,11 +23,22 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
+  #about {
+    --about-section-gap: 40px;
+  }
+
+  #about > .title-section {
+    padding-bottom: 14px;
+  }
+
+  #about .main-content {
+    padding-top: calc(62.2px + var(--about-section-gap));
+  }
+
   .about-intro {
     padding-left: 16px;
     font-size: 15px;
-    margin-bottom: 40px;
   }
 }
 
