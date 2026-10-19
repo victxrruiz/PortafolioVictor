@@ -1,0 +1,77 @@
+/* CSS-only entrance: never waits for images or blocks interaction. */
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background: #111;
+  color: #fff;
+  pointer-events: none;
+  animation: intro-exit .65s cubic-bezier(.76, 0, .24, 1) .85s both;
+}
+
+.site-intro-mark {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(64px, 12vw, 112px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -7px;
+  padding-right: 7px;
+  color: var(--accent-color, #D7FF38);
+  animation: intro-appear .55s ease-out both;
+}
+
+.site-intro-name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  animation: intro-appear .55s ease-out .1s both;
+}
+
+.site-intro-track {
+  width: 100px;
+  height: 2px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: #ffffff20;
+}
+
+.site-intro-track::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background: var(--accent-color, #D7FF38);
+  transform-origin: left;
+  animation: intro-progress .85s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes intro-appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes intro-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes intro-exit {
+  from { transform: translateY(0); visibility: visible; }
+  to { transform: translateY(-100%); visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-intro {
+    display: none;
+    animation: none;
+  }
+
+  .site-intro * {
+    animation: none;
+  }
+}
