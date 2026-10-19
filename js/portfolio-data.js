@@ -107,12 +107,12 @@ window.portfolioData = {
       "img/portfolio/fotografia/19.jpg?v=59270475b2",
       "img/portfolio/fotografia/29.jpg?v=022a9897a3",
       "img/portfolio/fotografia/30.jpg?v=c6ac08d864",
-      "img/portfolio/fotografia/40.jpg?v=bdd250a081",
-      "img/portfolio/fotografia/43.jpg?v=094e80a040",
+      "img/portfolio/fotografia/57.jpg?v=bdd250a081",
       "img/portfolio/fotografia/58.jpg?v=d56e9dcb97",
+      "img/portfolio/fotografia/59.jpg?v=094e80a040",
       "img/portfolio/fotografia/62.jpg?v=f10fb88e0b",
       "img/portfolio/fotografia/66.jpg?v=e6c23cda1a",
-      "img/portfolio/fotografia/2407.jpg?v=42ac7bbe7a"
+      "img/portfolio/fotografia/2408.png?v=470c048f4a"
     ],
     "thumbnails": [
       "img/portfolio/fotografia/01-thumb.jpg?v=b255323623",
@@ -122,27 +122,27 @@ window.portfolioData = {
       "img/portfolio/fotografia/19-thumb.jpg?v=7c4e6c7612",
       "img/portfolio/fotografia/29-thumb.jpg?v=e6076c5428",
       "img/portfolio/fotografia/30-thumb.jpg?v=19402c4237",
-      "img/portfolio/fotografia/40-thumb.jpg?v=006fc03f4d",
-      "img/portfolio/fotografia/43-thumb.jpg?v=4e26b675c0",
+      "img/portfolio/fotografia/57-thumb.jpg?v=006fc03f4d",
       "img/portfolio/fotografia/58-thumb.jpg?v=9488d5d445",
+      "img/portfolio/fotografia/59-thumb.jpg?v=4e26b675c0",
       "img/portfolio/fotografia/62-thumb.jpg?v=ba687e73ef",
       "img/portfolio/fotografia/66-thumb.jpg?v=b6d1377c8e",
-      "img/portfolio/fotografia/2407-thumb.jpg?v=c7fe697607"
+      "img/portfolio/fotografia/2408-thumb.png?v=9c8f5fc915"
     ],
     "titles": [
-      "ARQUITECTURA5",
-      "IMG_2955-Mejorado-NR",
-      "MITOKALI_TEQUILA",
-      "INTERUVP_FURBO",
-      "MITOKALI_TEQUILA",
-      "INTERUVP_FURBO",
-      "INTERUVP_FURBO",
-      "POSADA_TLX2025",
-      "POSADA_TLX2025",
-      "POSADA_TLX2025",
-      "POSADA_TLX2025",
-      "POSADA_TLX2025",
-      "IMG"
+      "Publicidad Arquitectura",
+      "Publicidad Produccion Musical",
+      "Publicidad Mitokali Eventos",
+      "Deportiva",
+      "Evento:Publicidad Mitokali Eventos",
+      "Deportiva(1)",
+      "Deportiva(2)",
+      "Presentación vocal en posada universitaria",
+      "Concierto navideño UVP Tlaxcala",
+      "Danza folclórica en posada universitaria",
+      "Retrato escénico en concierto navideño",
+      "Danza tradicional en celebración navideña",
+      "Publicidad Criminología"
     ]
   }
 };

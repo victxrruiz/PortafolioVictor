@@ -63,6 +63,10 @@ def synchronize():
                 (p for p in folder.iterdir() if p.suffix.lower() in {".jpg", ".jpeg", ".png"}),
                 key=lambda p: unicodedata.normalize("NFC", p.name).casefold(),
             )
+            reserved_orders = {
+                filename_details(p)[1] for p in sources if filename_details(p)[1] is not None
+            }
+            next_order = max([*existing_order.values(), *reserved_orders], default=0) + 1
             for position, source in enumerate(sources, 1):
                 title, order = filename_details(source)
                 extension = ".png" if source.suffix.lower() == ".png" else ".jpg"
@@ -71,9 +75,10 @@ def synchronize():
                     resize(source, candidate, 900, thumbnail=True)
                     order = existing_order.get(digest(candidate))
                     if order is None and not existing_order:
-                        order = position
+                        order = position if position not in reserved_orders else next_order
                     if order is None:
-                        raise ValueError(f"Agrega un número al final de este archivo: {source}")
+                        order = next_order
+                    next_order = max(next_order, order + 1)
                 if not title:
                     raise ValueError(f"Falta la descripción: {source}")
                 projects.append((order, title, source, extension))
