@@ -42,8 +42,8 @@ body.light .portfolio-collection {
 
 .portfolio-filter:hover,
 .portfolio-filter[aria-pressed="true"] {
-  background: #ffb400;
-  border-color: #ffb400;
+  background: var(--accent-color, #FF6B5E);
+  border-color: var(--accent-color, #FF6B5E);
   color: #111;
 }
 
@@ -81,7 +81,7 @@ body.light .portfolio-collection {
 }
 
 .portfolio-category-heading i {
-  color: #ffb400;
+  color: var(--accent-color, #FF6B5E);
   margin-right: 12px;
 }
 
@@ -113,7 +113,7 @@ body.light .portfolio-collection {
 }
 
 .portfolio-photo:hover {
-  border-color: #ffb400;
+  border-color: var(--accent-color, #FF6B5E);
   transform: translateY(-3px);
 }
 
@@ -136,14 +136,14 @@ body.light .portfolio-collection {
 }
 
 .portfolio-photo-number {
-  color: #ffb400;
+  color: var(--accent-color, #FF6B5E);
   font-weight: 700;
 }
 
 .portfolio-filter:focus-visible,
 .portfolio-photo:focus-visible,
 .portfolio-viewer button:focus-visible {
-  outline: 3px solid #ffb400;
+  outline: 3px solid var(--accent-color, #FF6B5E);
   outline-offset: 4px;
 }
 
@@ -180,8 +180,8 @@ body.light .portfolio-collection {
 }
 
 .portfolio-viewer button:hover {
-  border-color: #ffb400;
-  color: #ffb400;
+  border-color: var(--accent-color, #FF6B5E);
+  color: var(--accent-color, #FF6B5E);
 }
 
 .portfolio-viewer-close {

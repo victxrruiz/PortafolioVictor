@@ -11,7 +11,7 @@ var link_about = document.getElementById('link-about');
          // the layers are the elements that move from the sides
          nmbLayers: 3,
          // bg color of each layer
-         bgcolor: ['#eee', '#ffb400', '#eee'],
+         bgcolor: ['#eee', getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() || '#FF6B5E', '#eee'],
          // effect classname
          effect: 'anim--effect-3',
          onStart: function (direction) {

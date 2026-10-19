@@ -21,7 +21,7 @@
 }
 
 .contact-direct h3 span {
-  color: #ffb400;
+  color: var(--accent-color, #FF6B5E);
 }
 
 .contact-direct-intro {
@@ -40,7 +40,7 @@
 }
 
 .contact-direct-actions .button:first-child {
-  background: #ffb400;
+  background: var(--accent-color, #FF6B5E);
 }
 
 .contact-direct-actions .button:first-child .button-text,
@@ -63,7 +63,7 @@
 }
 
 .contact-direct-details a:hover {
-  color: #ffb400;
+  color: var(--accent-color, #FF6B5E);
   text-decoration: underline;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .contact-direct a:focus-visible {
-  outline: 3px solid #ffb400;
+  outline: 3px solid var(--accent-color, #FF6B5E);
   outline-offset: 5px;
 }
 

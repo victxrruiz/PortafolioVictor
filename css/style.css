@@ -1930,9 +1930,9 @@ body.blog-post article img {
     width: 124px;
     height: 54px;
     padding: 0;
-    border: 2px solid #ffb400;
+    border: 2px solid var(--accent-color, #FF6B5E);
     border-radius: 28px;
-    color: #ffb400;
+    color: var(--accent-color, #FF6B5E);
     cursor: pointer;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
   }
