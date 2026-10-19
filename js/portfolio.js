@@ -60,12 +60,6 @@
     }
   });
 
-  function imageSummary(images) {
-    return images.length + ' imágenes';
-  }
-  var allImages = categories.reduce(function (images, category) { return images.concat(category.images); }, []);
-  var allSummary = categories.length + ' categorías · ' + imageSummary(allImages);
-
   function imageDescription(category, index) {
     return category.titles && category.titles[index] ? category.titles[index] : category.title + ' — Imagen ' + (index + 1);
   }
@@ -84,11 +78,9 @@
   var filters = element('div', 'portfolio-filters');
   filters.setAttribute('role', 'group');
   filters.setAttribute('aria-label', 'Filtrar proyectos por categoría');
-  var status = element('p', 'portfolio-status open-sans-font', allSummary);
-  status.setAttribute('role', 'status');
   var content = element('div', 'portfolio-sections');
   content.id = 'portfolio-sections';
-  gallery.append(introduction, filters, status, content);
+  gallery.append(introduction, filters, content);
 
   var sections = [];
   var filterButtons = [];
@@ -104,8 +96,6 @@
       sections.forEach(function (section) {
         section.node.hidden = id !== 'all' && section.id !== id;
       });
-      var selectedCategory = categories.find(function (category) { return category.id === id; });
-      status.textContent = id === 'all' ? allSummary : label + ' · ' + imageSummary(selectedCategory.images);
     });
     filters.appendChild(button);
     filterButtons.push({ id: id, button: button });
@@ -167,7 +157,7 @@
     var icon = element('i', 'fa ' + category.icon);
     icon.setAttribute('aria-hidden', 'true');
     heading.append(icon, document.createTextNode(category.title));
-    headingRow.append(heading, element('span', 'portfolio-category-count open-sans-font', ('0' + category.images.length).slice(-2) + ' imágenes'));
+    headingRow.appendChild(heading);
     var grid = element('div', 'portfolio-photo-grid');
     if (!category.images.length) {
       section.append(headingRow, element('p', 'portfolio-intro open-sans-font', 'Aún no hay proyectos publicados en esta sección.'));
