@@ -1,3 +1,28 @@
+.about-intro {
+  max-width: 860px;
+  margin: 0 auto 56px;
+  padding-left: 24px;
+  border-left: 3px solid var(--accent-color, #D7FF38);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-intro p {
+  margin: 0 0 20px;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 575px) {
+  .about-intro {
+    padding-left: 16px;
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+}
+
 .about-actions-bottom {
   padding-bottom: 48px;
 }
