@@ -4,16 +4,24 @@
   padding: 10px 0 50px;
 }
 
-.contact-direct-icon {
-  font-size: 48px;
-  color: #ffb400;
-  margin-bottom: 26px;
+.contact-direct-question {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  margin-bottom: 22px;
 }
 
 .contact-direct h3 {
-  font-size: 30px;
-  line-height: 1.4;
-  margin-bottom: 18px;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 26px;
+}
+
+.contact-direct h3 span {
+  color: #ffb400;
 }
 
 .contact-direct-intro {
@@ -29,6 +37,15 @@
   flex-wrap: wrap;
   gap: 18px;
   margin-bottom: 32px;
+}
+
+.contact-direct-actions .button:first-child {
+  background: #ffb400;
+}
+
+.contact-direct-actions .button:first-child .button-text,
+.contact-direct-actions .button:first-child .button-icon {
+  color: #111;
 }
 
 .contact-direct-details {
@@ -64,8 +81,9 @@
 }
 
 @media (max-width: 575px) {
-  .contact-direct h3 {
-    font-size: 24px;
+  .contact-direct-question {
+    font-size: 11px;
+    letter-spacing: 1px;
   }
 
   .contact-direct-actions {
@@ -73,6 +91,9 @@
   }
 
   .contact-direct-actions .button {
-    width: min(100%, 280px);
+    width: min(100%, 340px);
+    font-size: 12px;
+    padding-left: 18px;
+    padding-right: 62px;
   }
 }
