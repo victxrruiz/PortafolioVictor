@@ -115,8 +115,8 @@ var link_about = document.getElementById('link-about');
 
    var indexPage = 0;
 
-   var link_portfolio = document.getElementById('link-portfolio');
-   if (link_portfolio) {
+   var links_portfolio = document.querySelectorAll('#link-portfolio, [data-open-portfolio]');
+   links_portfolio.forEach(function (link_portfolio) {
       link_portfolio.addEventListener('click', function (event) {
          event.preventDefault();
          indexPage = 2;
@@ -128,7 +128,7 @@ var link_about = document.getElementById('link-about');
             });
          });
       });
-   }
+   });
 
    desktop_nav.addEventListener('click', function (e) {
       var li = e.target.closest('li');
