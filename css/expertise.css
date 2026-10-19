@@ -1,0 +1,132 @@
+.expertise {
+  margin: 12px 0 56px;
+}
+
+.expertise-heading {
+  margin-bottom: 24px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+}
+
+.expertise-table-wrap {
+  border: 1px solid #ffffff18;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff03;
+}
+
+.expertise-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: inherit;
+  text-align: left;
+}
+
+.expertise-table thead {
+  background: #ffffff05;
+}
+
+.expertise-table thead th {
+  padding: 18px 26px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.expertise-table tbody tr {
+  border-top: 1px solid #ffffff10;
+  transition: background-color .2s ease;
+}
+
+.expertise-table tbody tr:hover {
+  background: #ffffff05;
+}
+
+.expertise-table tbody th,
+.expertise-table td {
+  padding: 24px 26px;
+  vertical-align: top;
+}
+
+.expertise-table tbody th {
+  width: 26%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.expertise-table th .fa {
+  width: 32px;
+  color: var(--accent-color, #D7FF38);
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expertise-tags li {
+  padding: 6px 12px;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+  background: #ffffff04;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+body.light .expertise-table-wrap,
+body.light .expertise-tags li {
+  border-color: #00000012;
+  background: #00000002;
+}
+
+body.light .expertise-table thead,
+body.light .expertise-table tbody tr:hover {
+  background: #00000004;
+}
+
+body.light .expertise-table thead th {
+  color: #666;
+}
+
+body.light .expertise-table tbody tr {
+  border-color: #0000000d;
+}
+
+body.light .expertise-table th .fa {
+  color: #536600;
+}
+
+@media (max-width: 575px) {
+  .expertise-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .expertise-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 18px;
+    gap: 14px;
+  }
+
+  .expertise-table tbody tr:first-child {
+    border-top: 0;
+  }
+
+  .expertise-table tbody th,
+  .expertise-table td {
+    width: 100%;
+    padding: 0;
+  }
+}
