@@ -1,3 +1,13 @@
+.about-actions-bottom {
+  padding-bottom: 48px;
+}
+
+@media (max-width: 991px) {
+  .about-actions-bottom {
+    padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 .expertise {
   margin: 12px 0 56px;
 }
