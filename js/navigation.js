@@ -11,7 +11,7 @@
   var curtain = document.createElement('div');
   curtain.className = 'motion-curtain motion-transition';
   curtain.setAttribute('aria-hidden', 'true');
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 3; i++) {
     var panel = document.createElement('span');
     panel.className = 'motion-panel';
     curtain.appendChild(panel);
@@ -38,13 +38,12 @@
 
   async function animatePanels(opening) {
     var animations = panels.map(function (panel, index) {
-      panel.style.transformOrigin = opening ? 'top' : 'bottom';
       return panel.animate([
-        { transform: opening ? 'scaleY(1)' : 'scaleY(0)' },
-        { transform: opening ? 'scaleY(0)' : 'scaleY(1)' }
+        { transform: opening ? 'translateX(0) skewX(-8deg)' : 'translateX(-125%) skewX(-8deg)' },
+        { transform: opening ? 'translateX(125%) skewX(-8deg)' : 'translateX(0) skewX(-8deg)' }
       ], {
-        duration: 250,
-        delay: index * 30,
+        duration: opening ? 360 : 320,
+        delay: (opening ? panels.length - 1 - index : index) * 45,
         easing: 'cubic-bezier(.76, 0, .24, 1)',
         fill: 'both'
       });
@@ -53,7 +52,7 @@
       return animation.finished.catch(function () {});
     }));
     panels.forEach(function (panel) {
-      panel.style.transform = opening ? 'scaleY(0)' : 'scaleY(1)';
+      panel.style.transform = opening ? 'translateX(125%) skewX(-8deg)' : 'translateX(0) skewX(-8deg)';
     });
     animations.forEach(function (animation) { animation.cancel(); });
   }
