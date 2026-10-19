@@ -1,0 +1,103 @@
+/* Shared visual language for the entrance and section transitions. */
+.motion-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.motion-panel {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background: #191919;
+  transform-origin: top;
+}
+
+.motion-panel::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--accent-color, #D7FF38);
+  opacity: .18;
+}
+
+.motion-intro {
+  animation: motion-dismiss 1.4s step-end both;
+}
+
+.motion-intro[hidden] {
+  display: none;
+}
+
+.motion-intro .motion-panel {
+  animation: motion-open .65s cubic-bezier(.76, 0, .24, 1) both;
+  animation-delay: calc(.55s + var(--panel) * .045s);
+}
+
+.motion-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+  animation: motion-symbol-out .2s ease .5s both;
+}
+
+.motion-symbol i {
+  display: block;
+  width: 4px;
+  height: 28px;
+  border-radius: 2px;
+  background: var(--accent-color, #D7FF38);
+  animation: motion-symbol-in .45s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.motion-symbol i:nth-child(2) { height: 14px; animation-delay: .06s; }
+.motion-symbol i:nth-child(3) { height: 22px; animation-delay: .12s; }
+
+.motion-transition {
+  visibility: hidden;
+}
+
+.motion-transition.is-active {
+  visibility: visible;
+  pointer-events: auto;
+  cursor: progress;
+}
+
+.motion-transition .motion-panel {
+  transform: scaleY(0);
+}
+
+@keyframes motion-open {
+  from { transform: scaleY(1); }
+  to { transform: scaleY(0); }
+}
+
+@keyframes motion-dismiss {
+  from { visibility: visible; }
+  to { visibility: hidden; }
+}
+
+@keyframes motion-symbol-in {
+  from { opacity: 0; transform: translateY(10px) scaleY(.4); }
+  to { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+@keyframes motion-symbol-out {
+  to { opacity: 0; transform: translate(-50%, -65%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-intro { display: none; animation: none; }
+  .motion-intro * { animation: none; }
+}
