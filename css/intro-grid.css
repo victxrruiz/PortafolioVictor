@@ -1,0 +1,153 @@
+/* The grid builds itself before revealing the name. No loading events needed. */
+.site-intro {
+  --grid-accent: var(--accent-color, #D7FF38);
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  pointer-events: none;
+  animation: grid-exit .65s cubic-bezier(.76, 0, .24, 1) 2s both;
+}
+
+.intro-grid-lines {
+  position: absolute;
+  inset: 0;
+}
+
+.intro-grid-lines::before,
+.intro-grid-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+}
+
+.intro-grid-lines::before {
+  background: repeating-linear-gradient(90deg, transparent 0 calc(10vw - 1px), #ffffff12 calc(10vw - 1px) 10vw);
+  animation: grid-columns .75s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.intro-grid-lines::after {
+  background: repeating-linear-gradient(0deg, transparent 0 calc(10vh - 1px), #ffffff12 calc(10vh - 1px) 10vh);
+  animation: grid-rows .75s cubic-bezier(.22, 1, .36, 1) .15s both;
+}
+
+.site-intro-mark {
+  position: absolute;
+  top: max(28px, env(safe-area-inset-top, 0px));
+  left: 10vw;
+  font: 900 24px/1 'Poppins', sans-serif;
+  letter-spacing: -2px;
+  color: var(--grid-accent);
+}
+
+.intro-grid-design {
+  position: relative;
+  width: 80vw;
+  max-width: 1100px;
+  padding: clamp(24px, 5vw, 64px) 0;
+}
+
+.intro-grid-design::before,
+.intro-grid-design::after {
+  content: '';
+  position: absolute;
+  inset: 0 -10vw;
+  border-top: 1px solid var(--grid-accent);
+  border-bottom: 1px solid var(--grid-accent);
+  opacity: .5;
+  animation: grid-rows .6s ease .35s both;
+}
+
+.intro-grid-design::after {
+  inset: -100vh 0;
+  border: 0;
+  border-left: 1px solid var(--grid-accent);
+  border-right: 1px solid var(--grid-accent);
+  animation-name: grid-columns;
+}
+
+.site-intro-name {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .05em .22em;
+  margin: 0;
+  font: 900 clamp(38px, 9vw, 124px)/1.05 'Poppins', sans-serif;
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+}
+
+.site-intro-name > span {
+  display: block;
+  overflow: hidden;
+}
+
+.site-intro-name b {
+  display: block;
+  font-weight: inherit;
+  animation: grid-type .7s cubic-bezier(.16, 1, .3, 1) .5s both;
+}
+
+.site-intro-name > span:last-child b {
+  color: var(--grid-accent);
+  animation-delay: .7s;
+}
+
+.intro-grid-label,
+.site-intro-caption {
+  position: absolute;
+  font: 600 10px/1.6 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.intro-grid-label {
+  top: -28px;
+  left: 0;
+  color: var(--grid-accent);
+  animation: grid-label .35s ease .9s both;
+}
+
+.site-intro-caption {
+  bottom: max(40px, env(safe-area-inset-bottom, 0px));
+  left: 10vw;
+  color: #aaa;
+  animation: grid-label .35s ease 1.1s both;
+}
+
+@keyframes grid-columns {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes grid-rows {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes grid-type {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes grid-label {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes grid-exit {
+  from { clip-path: inset(0); visibility: visible; }
+  to { clip-path: inset(0 0 100% 0); visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-intro { display: none; animation: none; }
+  .site-intro *, .site-intro *::before, .site-intro *::after { animation: none; }
+}
