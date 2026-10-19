@@ -1,6 +1,6 @@
-/* Coral accent shared by both themes. */
+/* Lime accent shared by both themes. */
 :root {
-  --accent-color: #FF6B5E;
+  --accent-color: #D7FF38;
 }
 
 .home h1,
@@ -69,4 +69,14 @@ body.light .blog .page-link:hover,
 .c100 .bar,
 .c100[class*="p"] .fill {
   border-color: var(--accent-color);
+}
+
+/* Dark foreground keeps the bright accent backgrounds readable. */
+.button-icon,
+.button:hover .button-text,
+.header .icon-box h2,
+.header ul.icon-menu li.icon-box.active i,
+.header ul.icon-menu li.icon-box:hover i,
+.about .resume-box .icon i {
+  color: #111;
 }
