@@ -1,0 +1,78 @@
+.contact-direct {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 10px 0 50px;
+}
+
+.contact-direct-icon {
+  font-size: 48px;
+  color: #ffb400;
+  margin-bottom: 26px;
+}
+
+.contact-direct h3 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.contact-direct-intro {
+  max-width: 520px;
+  margin: 0 auto 30px;
+  line-height: 1.9;
+}
+
+.contact-direct-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.contact-direct-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.contact-direct-details a {
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+.contact-direct-details a:hover {
+  color: #ffb400;
+  text-decoration: underline;
+}
+
+.contact-direct-details span {
+  opacity: .7;
+}
+
+.contact-direct-details .fa {
+  margin-right: 5px;
+}
+
+.contact-direct a:focus-visible {
+  outline: 3px solid #ffb400;
+  outline-offset: 5px;
+}
+
+@media (max-width: 575px) {
+  .contact-direct h3 {
+    font-size: 24px;
+  }
+
+  .contact-direct-actions {
+    flex-direction: column;
+  }
+
+  .contact-direct-actions .button {
+    width: min(100%, 280px);
+  }
+}
