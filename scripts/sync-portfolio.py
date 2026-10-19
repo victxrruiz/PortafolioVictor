@@ -18,6 +18,11 @@ CATEGORIES = {
     "fotografia": "FOTOGRAFÍA",
 }
 
+# Mantener los originales descartados en su carpeta, sin publicarlos en la galería.
+EXCLUDED_FILES = {
+    "fotografia": {"INTERUVP_FURBO-4.jpg", "INTERUVP_FURBO-6.jpg", "INTERUVP_FURBO-20.jpg"},
+}
+
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -60,7 +65,9 @@ def synchronize():
             }
             projects = []
             sources = sorted(
-                (p for p in folder.iterdir() if p.suffix.lower() in {".jpg", ".jpeg", ".png"}),
+                (p for p in folder.iterdir()
+                 if p.suffix.lower() in {".jpg", ".jpeg", ".png"}
+                 and p.name not in EXCLUDED_FILES.get(category, set())),
                 key=lambda p: unicodedata.normalize("NFC", p.name).casefold(),
             )
             reserved_orders = {
