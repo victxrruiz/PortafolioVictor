@@ -2,7 +2,7 @@
 @media (hover: hover) and (pointer: fine) {
   body,
   .c100:hover span {
-    cursor: url('../img/cursor-figma.svg') 4 3, default;
+    cursor: url('../img/cursor-figma.svg?v=2') 3 2, default;
   }
 
   a,
@@ -18,7 +18,7 @@
   .portfolio-filter,
   .portfolio-viewer button,
   #inputmobile .trigger-mobile {
-    cursor: url('../img/cursor-figma.svg') 4 3, pointer;
+    cursor: url('../img/cursor-figma.svg?v=2') 3 2, pointer;
   }
 
   input,
