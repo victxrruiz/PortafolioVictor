@@ -1,0 +1,21 @@
+@media (max-width: 991px) {
+  #home .home {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  #home .home .container-home {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 104px 0 calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  #home .home-portrait {
+    width: clamp(180px, 52vw, 230px);
+    height: clamp(180px, 52vw, 230px);
+    margin: 0 auto 28px;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
