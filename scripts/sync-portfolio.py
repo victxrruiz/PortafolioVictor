@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = {
     "social-media": "SOCIAL MEDIA",
     "editorial": "EDITORIAL",
+    "branding": "MARCA",
     "escenografia": "ESCENOGRAFÍA Y STANDS",
 }
 
@@ -57,15 +58,19 @@ def synchronize():
                 if p.stem.split("-")[0].isdigit()
             }
             projects = []
-            for source in sorted(folder.iterdir()):
-                if source.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
-                    continue
+            sources = sorted(
+                (p for p in folder.iterdir() if p.suffix.lower() in {".jpg", ".jpeg", ".png"}),
+                key=lambda p: unicodedata.normalize("NFC", p.name).casefold(),
+            )
+            for position, source in enumerate(sources, 1):
                 title, order = filename_details(source)
                 extension = ".png" if source.suffix.lower() == ".png" else ".jpg"
                 if order is None:
                     candidate = Path(temporary) / ("candidate" + extension)
                     resize(source, candidate, 900, thumbnail=True)
                     order = existing_order.get(digest(candidate))
+                    if order is None and not existing_order:
+                        order = position
                     if order is None:
                         raise ValueError(f"Agrega un número al final de este archivo: {source}")
                 if not title:

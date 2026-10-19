@@ -64,6 +64,23 @@ window.portfolioData = {
       "Revista Mitokali Eventos"
     ]
   },
+  "branding": {
+    "images": [
+      "img/portfolio/branding/01.png?v=e466f499d3",
+      "img/portfolio/branding/02.png?v=e1db42adfd",
+      "img/portfolio/branding/03.png?v=8226ff2f8a"
+    ],
+    "thumbnails": [
+      "img/portfolio/branding/01-thumb.png?v=a2d4cc352c",
+      "img/portfolio/branding/02-thumb.png?v=8f15fe7b22",
+      "img/portfolio/branding/03-thumb.png?v=af39895f26"
+    ],
+    "titles": [
+      "LOGO DEPARTAMENTO INTERNO UVP",
+      "LOGO PARA 44 ANIVERSARIO UVP",
+      "LOGO SABLE BICI MOVILIDAD ESTUDIANTIL UVP"
+    ]
+  },
   "escenografia": {
     "images": [
       "img/portfolio/escenografia/01.png?v=b7767e3067",
