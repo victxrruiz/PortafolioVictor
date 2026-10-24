@@ -1,0 +1,106 @@
+/* Typographic entrance inspired by editorial composition, not a loading meter. */
+#preloader {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  color: #f5f5f5;
+  pointer-events: none;
+  animation: editorial-dismiss .5s ease 1.2s both;
+}
+
+#preloader::before,
+#preloader::after {
+  content: none;
+  animation: none;
+}
+
+.editorial-signature {
+  position: relative;
+  width: min(76vw, 460px);
+  padding: 26px 0;
+}
+
+.editorial-signature::before,
+.editorial-signature::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: #ffffff40;
+  border-style: solid;
+  animation: editorial-guide .5s ease both;
+}
+
+.editorial-signature::before {
+  top: 0;
+  left: -20px;
+  border-width: 1px 0 0 1px;
+}
+
+.editorial-signature::after {
+  bottom: 0;
+  right: -20px;
+  border-width: 0 1px 1px 0;
+}
+
+.editorial-word {
+  display: block;
+  overflow: hidden;
+  padding: .04em 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(48px, 13vw, 96px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.editorial-word > span {
+  display: block;
+  animation: editorial-type .7s cubic-bezier(.22, 1, .36, 1) .1s both;
+}
+
+.editorial-word:last-of-type {
+  color: var(--accent-color, #D7FF38);
+}
+
+.editorial-word:last-of-type > span {
+  animation-delay: .25s;
+}
+
+.editorial-rule {
+  display: block;
+  height: 1px;
+  margin-top: 24px;
+  background: var(--accent-color, #D7FF38);
+  opacity: .55;
+  transform-origin: left;
+  animation: editorial-rule .65s cubic-bezier(.22, 1, .36, 1) .35s both;
+}
+
+@keyframes editorial-type {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes editorial-guide {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes editorial-rule {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes editorial-dismiss {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader { display: none; animation: none; }
+  #preloader *, #preloader *::before, #preloader *::after { animation: none; }
+}
