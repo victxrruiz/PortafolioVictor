@@ -1,0 +1,60 @@
+/* The initials are cut out of three moving solids, rather than typeset. */
+#preloader {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  pointer-events: none;
+  animation: negative-dismiss .55s ease 1.35s both;
+}
+
+#preloader::before,
+#preloader::after {
+  content: none;
+  animation: none;
+}
+
+.negative-mark {
+  display: block;
+  width: min(64vw, 300px);
+  height: auto;
+  overflow: visible;
+}
+
+.negative-piece {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: negative-assemble 1.7s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.negative-piece:nth-child(1) { --x: -32px; --y: 20px; }
+.negative-piece:nth-child(2) { --x: 0px; --y: -28px; }
+.negative-piece:nth-child(3) { --x: 32px; --y: 20px; }
+
+.negative-ink {
+  fill: var(--accent-color, #D7FF38);
+  animation: negative-discover 1.7s ease both;
+}
+
+@keyframes negative-assemble {
+  0% { opacity: 0; transform: translate(var(--x), var(--y)); }
+  40%, 76% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(var(--x), var(--y)); }
+}
+
+@keyframes negative-discover {
+  0%, 22% { opacity: 0; }
+  50%, 76% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes negative-dismiss {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader { display: none; animation: none; }
+  #preloader * { animation: none; }
+}

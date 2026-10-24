@@ -28,7 +28,7 @@
     <!-- CSS Skin File -->
     <link href="css/skins/coral.css?v=lime-1" rel="stylesheet">
     <link href="css/cursor.css?v=4" rel="stylesheet">
-    <link href="css/editorial-loader.css?v=1" rel="stylesheet">
+    <link href="css/negative-loader.css?v=1" rel="stylesheet">
     <link href="css/scroll-details.css?v=1" rel="stylesheet">
     <link href="css/mobile-home.css?v=1" rel="stylesheet">
     <link href="css/expertise.css?v=4" rel="stylesheet">
@@ -37,11 +37,21 @@
   </head>
   <body class="light home-page">
     <div id="preloader" aria-hidden="true">
-      <div class="editorial-signature">
-        <span class="editorial-word"><span>Victor</span></span>
-        <span class="editorial-word"><span>Ruiz</span></span>
-        <i class="editorial-rule"></i>
-      </div>
+      <svg class="negative-mark" xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120" focusable="false">
+        <defs>
+          <path id="negative-vr" fill-rule="evenodd" d="M22 27H37L53 75 69 27H84L61 94H45ZM139 27H171Q194 27 194 48Q194 62 182 67L200 94H182L165 69H154V94H139ZM154 41V55H170Q179 55 179 48Q179 41 170 41Z"/>
+          <mask id="negative-vr-mask" maskUnits="userSpaceOnUse" x="-40" y="-40" width="320" height="200" style="mask-type:luminance">
+            <rect x="-40" y="-40" width="320" height="200" fill="white"/>
+            <use href="#negative-vr" fill="black"/>
+          </mask>
+        </defs>
+        <use class="negative-ink" href="#negative-vr"/>
+        <g mask="url(#negative-vr-mask)">
+          <rect class="negative-piece" x="0" y="12" width="78" height="96" fill="#292c23"/>
+          <rect class="negative-piece" x="81" y="12" width="78" height="96" fill="#24271f"/>
+          <rect class="negative-piece" x="162" y="12" width="78" height="96" fill="#292c23"/>
+        </g>
+      </svg>
     </div>
     <!-- Header Starts -->
     <header class="header" id="navbar-collapse-toggle">
