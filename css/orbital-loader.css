@@ -1,0 +1,118 @@
+/* Decorative entrance, not a network progress indicator. Ends without JavaScript. */
+#preloader {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  pointer-events: none;
+  animation: orbital-dismiss .6s cubic-bezier(.22, 1, .36, 1) 1.35s both;
+}
+
+#preloader::before,
+#preloader::after {
+  content: none;
+  animation: none;
+}
+
+.loader-scene {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: orbital-arrive .65s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.loader-ring {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid #ffffff12;
+  border-radius: 50%;
+}
+
+.loader-ring::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid transparent;
+  border-top-color: var(--accent-color, #D7FF38);
+  border-right-color: #d7ff3828;
+  border-radius: inherit;
+  animation: orbital-spin 1.7s cubic-bezier(.65, 0, .35, 1) both;
+}
+
+.loader-ring::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-color, #D7FF38);
+}
+
+.loader-ring-inner {
+  inset: 38px;
+  transform: rotate(140deg);
+}
+
+.loader-ring-inner::before {
+  animation-direction: reverse;
+}
+
+.loader-ring-inner::after {
+  width: 4px;
+  height: 4px;
+  top: -2px;
+  opacity: .5;
+}
+
+.loader-core {
+  position: absolute;
+  inset: 76px;
+  animation: orbital-core 1.5s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.loader-core i {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--accent-color, #D7FF38);
+  animation: orbital-piece 1.4s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.loader-core i:nth-child(1) { top: 0; left: 0; border-right: 0; border-bottom: 0; --x: -20px; --y: -20px; }
+.loader-core i:nth-child(2) { top: 0; right: 0; border-left: 0; border-bottom: 0; --x: 20px; --y: -20px; }
+.loader-core i:nth-child(3) { bottom: 0; right: 0; border-left: 0; border-top: 0; --x: 20px; --y: 20px; }
+.loader-core i:nth-child(4) { bottom: 0; left: 0; border-right: 0; border-top: 0; --x: -20px; --y: 20px; }
+
+@keyframes orbital-arrive {
+  from { opacity: 0; transform: scale(.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes orbital-spin {
+  from { transform: rotate(-100deg); }
+  to { transform: rotate(260deg); }
+}
+
+@keyframes orbital-core {
+  0% { transform: rotate(-45deg); }
+  70%, 100% { transform: rotate(45deg); }
+}
+
+@keyframes orbital-piece {
+  0% { opacity: 0; transform: translate(var(--x), var(--y)); }
+  45%, 80% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(var(--x), var(--y)); }
+}
+
+@keyframes orbital-dismiss {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader { display: none; animation: none; }
+  #preloader *, #preloader *::before { animation: none; }
+}
