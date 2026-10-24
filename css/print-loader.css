@@ -1,0 +1,94 @@
+/* Registration marks and overlapping outlines reference graphic production. */
+#preloader {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  pointer-events: none;
+  animation: print-dismiss .5s ease 1.4s both;
+}
+
+#preloader::before,
+#preloader::after {
+  content: none;
+  animation: none;
+}
+
+.print-composition {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(72vw, 300px);
+  aspect-ratio: 1.35;
+}
+
+.print-letter {
+  grid-area: 1 / 1;
+  font: 800 clamp(76px, 24vw, 132px)/1 'Poppins', sans-serif;
+  letter-spacing: -.065em;
+  padding-right: .065em;
+  color: #eee;
+  animation: print-solid .5s ease .65s both;
+}
+
+.print-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #9a9a9a;
+  --print-offset: -18px;
+  animation: print-register 1.3s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.print-outline-accent {
+  -webkit-text-stroke-color: var(--accent-color, #D7FF38);
+  --print-offset: 18px;
+}
+
+.print-guide {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  opacity: .45;
+  animation: print-guide .5s ease both;
+}
+
+.print-guide::before,
+.print-guide::after {
+  content: '';
+  position: absolute;
+  background: var(--accent-color, #D7FF38);
+}
+
+.print-guide::before { top: 7px; left: 0; width: 16px; height: 1px; }
+.print-guide::after { top: 0; left: 7px; width: 1px; height: 16px; }
+.print-guide:nth-of-type(1) { top: 0; left: 0; }
+.print-guide:nth-of-type(2) { top: 0; right: 0; }
+.print-guide:nth-of-type(3) { bottom: 0; left: 0; }
+.print-guide:nth-of-type(4) { bottom: 0; right: 0; }
+
+@keyframes print-register {
+  0% { opacity: 0; transform: translate(var(--print-offset), 8px); }
+  20% { opacity: .75; }
+  65% { opacity: .75; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+
+@keyframes print-solid {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes print-guide {
+  from { opacity: 0; transform: scale(.8); }
+  to { opacity: .45; transform: scale(1); }
+}
+
+@keyframes print-dismiss {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader { display: none; animation: none; }
+  #preloader * { animation: none; }
+}
