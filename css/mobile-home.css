@@ -1,3 +1,27 @@
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .home-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .home-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-actions .button {
+    width: min(100%, 280px);
+  }
+}
+
 @media (max-width: 991px) {
   #home .home {
     height: auto;
